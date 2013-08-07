@@ -1,0 +1,33 @@
+<script type="text/javascript">
+  window.mainPageTitle = 'Main Page';
+
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.initialize({
+      'title': window.mainPageTitle,
+      'icon': 'http://localhost:3001/icon.png',
+      'buttons': [
+        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+      ]
+    });
+
+    Shopify.API.Bar.loadingOff();
+  });
+</script>
+
+<p>Shopify Embedded Example.</p>
+
+<p>This application demos all the various ways an app can now interact with the admin. See the README for details.</p>
+
+<h2>Demo Pages</h2>
+<ul>
+
+</ul>
+
+<h2>Function calls</h2>
+<ul>
+  <li><%= link_to_function "Turn spinner off", "Shopify.API.Bar.loadingOff()" %></li>
+  <li><%= link_to_function "Turn spinner on", "Shopify.API.Bar.loadingOn()" %></li>
+  <li><%= link_to_function "Add an exclamation mark to the title", "window.mainPageTitle = window.mainPageTitle + '!'; Shopify.API.Bar.setTitle(window.mainPageTitle)" %></li>
+  <li><%= link_to_function "Redirect to /orders within the admin", "Shopify.API.redirect('/orders')" %></li>
+</ul>
+</div>
