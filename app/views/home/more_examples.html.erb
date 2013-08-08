@@ -1,0 +1,15 @@
+<script type="text/javascript">
+  window.mainPageTitle = 'Main Page';
+
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.initialize({
+      'title': window.mainPageTitle,
+      'icon': 'http://localhost:3000/icon.png',
+      'buttons': [
+        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+      ]
+    });
+
+    Shopify.API.Bar.loadingOff();
+  });
+</script>

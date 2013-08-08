@@ -5,5 +5,7 @@ EmbededApp::Application.routes.draw do
     get 'auth/shopify/callback' => :show
   end
 
+  get 'modal' => "home#modal", :as => :modal
+
   root :to => 'home#index'
 end

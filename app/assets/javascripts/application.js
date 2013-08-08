@@ -4,17 +4,22 @@
 
 Shopify.API.debug = true;
 
-
 window.newModal = function(path, title){
   Shopify.API.Modal.open({
     'src': path,
     'title': title,
-    'primaryButton': { label: "OK", message: 'modal_ok'},
-    'buttons': [ { label: "Cancel", action: function(message){ Shopify.API.Modal.close(false); } } ],
-  }, function(result, data){
-    if(result){
-      window.location = "/unicorns";
-    }
+    'primaryButton': { 
+      label: "OK", 
+      message: 'modal_ok', 
+      action: function(message){ 
+        Shopify.API.Modal.close(true); 
+      }
+    },
+    'buttons': [ { 
+      label: "Cancel", 
+      action: function(message){ 
+        Shopify.API.Modal.close(false); } 
+    } ],
   });
 }
 
