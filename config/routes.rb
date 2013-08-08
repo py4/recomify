@@ -6,6 +6,8 @@ EmbededApp::Application.routes.draw do
   end
 
   get 'modal' => "home#modal", :as => :modal
+  get 'regular_app_page' => "home#regular_app_page"
+  get 'help' => "home#help"
 
   root :to => 'home#index'
 end

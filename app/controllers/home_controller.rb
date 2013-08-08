@@ -13,7 +13,10 @@ class HomeController < ApplicationController
   def modal
   end
 
-  def more_examples
+  def regular_app_page
+  end
+
+  def help
   end
   
 end

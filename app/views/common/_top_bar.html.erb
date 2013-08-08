@@ -6,7 +6,11 @@
       'title': window.mainPageTitle,
       'icon': 'http://localhost:3000/icon.png',
       'buttons': [
-        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+        { 
+          label: "Help", action: function(){  
+            window.location = "/help"; 
+          }
+        }
       ]
     });
 

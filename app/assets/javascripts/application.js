@@ -23,6 +23,19 @@ window.newModal = function(path, title){
   });
 }
 
+window.confirmModal = function () {
+
+  Shopify.API.Modal.confirm({
+    title: "Delete your account?",
+    message: "Do you want to delete your account? This can't be undone.",
+    okButton: "Yes, delete my account",
+    cancelButton: "No, keep my account"
+  }, function(result){
+    Shopify.API.flashNotice('Closing the confirm modal.')
+  });
+
+}
+
 // Make a delete form and submit it, non AJAX.
 window.deleteFormSubmit = function(location) {
   var form = document.createElement('form');

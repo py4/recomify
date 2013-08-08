@@ -1,27 +1,16 @@
-<script type="text/javascript">
-  window.mainPageTitle = 'Main Page';
-
-  Shopify.API.ready(function(){
-    Shopify.API.Bar.initialize({
-      'title': window.mainPageTitle,
-      'icon': 'http://localhost:3000/icon.png',
-      'buttons': [
-        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
-      ]
-    });
-
-    Shopify.API.Bar.loadingOff();
-  });
-</script>
+<%= render "/common/top_bar" %>
 
 <p>Shopify Embedded Example.</p>
 
 <p>This application demos all the various ways an app can now interact with the admin. See the README for details.</p>
 
+<p>Links work normally: <a href="regular_app_page">Link to a regular app page</a></p>
+
 <h2>Modal Pages</h2>
   <ul>
     <li><a href="#" onclick="newModal('<%= modal_url %>','This is a custom modal title')">Open modal window</a></li>
     <li><a href="#" onclick="Shopify.API.Modal.alert('Put your alert message here!')">Alert alert!</a></li>
+    <li><a href="#" onclick="confirmModal()">Confirm modal!</a></li>
   </ul>
 <ul>
 
@@ -33,5 +22,8 @@
   <li><a href="#" onclick="Shopify.API.Bar.loadingOn()">Turn spinner on</a></li>
   <li><a href="#" onclick="window.mainPageTitle = window.mainPageTitle + '!'; Shopify.API.Bar.setTitle(window.mainPageTitle)">Add an exclamation mark to the title</a></li>
   <li><a href="#" onclick="Shopify.API.redirect('/orders')">Redirect to /orders within the admin</a></li>
+
+  <li><a href="#" onclick="Shopify.API.flashNotice('Yay! Someone save a kitty from a tree!');">Successful flash notice!</a></li>
+  <li><a href="#" onclick="Shopify.API.flashError('An error occurred. I\'m angry and red.');">Error flash notice!</a></li>
 </ul>
 </div>
