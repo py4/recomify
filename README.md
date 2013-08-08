@@ -13,9 +13,9 @@ Clone the repo from git:
 
 To add your application credentials:
 
-    cp config/application.yml.example config/application.yml
+    cp config/shopify_app.yml.example config/shopify_app.yml
 
-Open the `config/application.yml` and add your credentials.
+Open the `config/shopify_app.yml` and add your credentials.
 
 Install the gems:
 

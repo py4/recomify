@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore application configurations
-/config/application.yml
+/config/shopify_app.yml

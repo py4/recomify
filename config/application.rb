@@ -9,17 +9,9 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-class Settings < Settingslogic
-  source File.expand_path('../application.yml', __FILE__)
-  namespace Rails.env
-end
-
 module EmbededApp
   class Application < Rails::Application
     
-    # Shopify API connection credentials:
-    config.shopify.api_key = Settings.shopify.api_key
-    config.shopify.secret  = Settings.shopify.secret
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

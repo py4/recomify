@@ -1,4 +1,0 @@
-development:
-  shopify:
-    api_key: <put you api_key here>
-    secret: <put you api_secret here>
