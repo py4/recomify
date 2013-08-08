@@ -12,14 +12,20 @@ window.newModal = function(path, title){
       label: "OK", 
       message: 'modal_ok', 
       action: function(message){ 
-        Shopify.API.Modal.close(true); 
+        Shopify.API.Modal.close("ok"); 
       }
     },
     'buttons': [ { 
       label: "Cancel", 
       action: function(message){ 
-        Shopify.API.Modal.close(false); } 
+        Shopify.API.Modal.close("cancel"); 
+      } 
     } ],
+  }, function(result, data){
+    if (result == "ok")
+      Shopify.API.flashNotice("'Ok' button pressed")
+    else if (result == "cancel")
+      Shopify.API.flashNotice("'Cancel' button pressed")
   });
 }
 
