@@ -18,5 +18,12 @@ class HomeController < ApplicationController
 
   def help
   end
+
+  def form_page
+  end
+
+  def save_unicorns
+    @unicorns_qty = params[:unicorns_qty]
+  end
   
 end

@@ -1,0 +1,17 @@
+<%= render "/common/top_bar" %>
+
+<script type="text/javascript">
+    window.mainPageTitle = 'Saving unicorns!';
+
+   Shopify.API.ready(function(){
+     Shopify.Bar.setTitle(window.mainPageTitle);
+     Shopify.API.Bar.loadingOff();
+   });
+
+</script>
+
+<% if @unicorns_qty.to_i.zero? %>
+  <p>Oohhh. No Unicorns were saved. They are all dead. =(</p>
+<% else %>
+  <p>Yay! You saved <%= @unicorns_qty %>!</p> 
+<% end %>
