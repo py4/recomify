@@ -13,7 +13,7 @@
 
 <h2>Modal Pages</h2>
 <ul>
-  <li><a href="#" onclick="newModal('<%= modal_url %>','This is a custom modal title')">Open modal window</a></li>
+  <li><a href="#" onclick="newModal('<%= modal_url %>?name=CaptainHook','This is a custom modal title')">Modal window passing a name parameter</a></li>
   <li><a href="#" onclick="Shopify.API.Modal.alert('Put your alert message here!')">Alert alert!</a></li>
   <li><a href="#" onclick="confirmModal()">Confirm modal!</a></li>
   <li><a href="#" onclick="inputModal('May I ask you something?')">Prompt modal</a></li>
