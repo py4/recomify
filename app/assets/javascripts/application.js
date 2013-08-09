@@ -37,7 +37,10 @@ window.confirmModal = function () {
     okButton: "Yes, delete my account",
     cancelButton: "No, keep my account"
   }, function(result){
-    Shopify.API.flashNotice('Closing the confirm modal.')
+    if (result)
+      Shopify.API.flashNotice("I'll delete it! (I'm kidding)")
+    else
+      Shopify.API.flashNotice("Sure, I'll keep you account. =D")
   });
 
 }
