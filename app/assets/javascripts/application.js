@@ -42,6 +42,17 @@ window.confirmModal = function () {
 
 }
 
+window.inputModal = function (prompt) {
+  Shopify.API.Modal.input(prompt, function(result, data){
+    if(result){
+      Shopify.API.flashNotice("You entered: \"" + data + "\". Why?");
+    }
+    else{
+      Shopify.API.flashNotice("You canceled my question. =(");
+    }
+  });
+}
+
 // Make a delete form and submit it, non AJAX.
 window.deleteFormSubmit = function(location) {
   var form = document.createElement('form');
