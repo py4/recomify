@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
+  layout :false
+
   def new
-    authenticate
+    authenticate if params[:shop]
   end
 
   def show
