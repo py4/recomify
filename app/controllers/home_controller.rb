@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   
-  around_filter :shopify_session, :except => 'welcome'
+  around_filter :shopify_session
   
   def index
   end

@@ -21,7 +21,7 @@ window.newModal = function(path, title){
         Shopify.API.Modal.close("cancel"); 
       } 
     } ],
-  }, function(result, data){
+  }, function(result){
     if (result == "ok")
       Shopify.API.flashNotice("'Ok' button pressed")
     else if (result == "cancel")
