@@ -44,4 +44,5 @@ gem 'jquery-rails'
 group :development, :test do
   gem "less-rails-bootstrap"
   gem "therubyracer", :platforms => :ruby
+  gem 'pry-rails'
 end

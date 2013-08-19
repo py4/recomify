@@ -2,21 +2,22 @@
 
 <p>Shopify Embedded Example.</p>
 
-<p>This application demos all the various ways an app can now interact with the admin. See the README for details.</p>
+<p>This application demos the various ways an app can now interact with the Shopify Admin. See the project README for details.</p>
 
-<p>Links work normally: <a href="regular_app_page">Link to a regular app page</a></p>
+<p>Links work normally: <a href="regular_app_page">Another page in the app</a></p>
 
 <!-- 
-  All code in here is for example and we focus on simplicity. Try not to use 'onclick'
-  attribute in real applications and focus on unobtrusive javascript (http://en.wikipedia.org/wiki/Unobtrusive_JavaScript)
+  This is example code, focusing on simplicity.
+  Try not to use 'onclick' attributes in real applications. Use unintrusive JavaScript instead.
+  http://en.wikipedia.org/wiki/Unobtrusive_JavaScript)
 -->
 
 <h2>Modal Pages</h2>
 <ul>
-  <li><a href="#" onclick="newModal('<%= modal_url %>?name=CaptainHook','This is a custom modal title')">Modal window passing a name parameter</a></li>
-  <li><a href="#" onclick="Shopify.API.Modal.alert('Put your alert message here!')">Alert alert!</a></li>
-  <li><a href="#" onclick="confirmModal()">Confirm modal!</a></li>
+  <li><a href="#" onclick="ShopifyApp.Modal.alert('Put your alert message here!')">Alert alert</a></li>
+  <li><a href="#" onclick="confirmModal()">Confirm modal</a></li>
   <li><a href="#" onclick="inputModal('May I ask you something?')">Prompt modal</a></li>
+  <li><a href="#" onclick="newModal('<%= modal_url %>?name=CaptainHook','This is a custom modal title')">Modal window containing an iframe</a></li>
 </ul>
 
 <h2>Forms</h2>
@@ -26,11 +27,11 @@
 
 <h2>Function calls</h2>
 <ul>
-  <li><a href="#" onclick="Shopify.API.Bar.loadingOff()">Turn spinner off</a></li>
-  <li><a href="#" onclick="Shopify.API.Bar.loadingOn()">Turn spinner on</a></li>
-  <li><a href="#" onclick="window.mainPageTitle = window.mainPageTitle + '!'; Shopify.API.Bar.setTitle(window.mainPageTitle)">Add an exclamation mark to the title</a></li>
-  <li><a href="#" onclick="Shopify.API.redirect('/orders')">Redirect to /orders within the admin</a></li>
+  <li><a href="#" onclick="ShopifyApp.Bar.loadingOff()">Turn spinner off</a></li>
+  <li><a href="#" onclick="ShopifyApp.Bar.loadingOn()">Turn spinner on</a></li>
+  <li><a href="#" onclick="window.mainPageTitle = window.mainPageTitle + '!'; ShopifyApp.Bar.setTitle(window.mainPageTitle)">Add an exclamation mark to the title</a></li>
+  <li><a href="#" onclick="ShopifyApp.redirect('/orders')">Redirect to /orders within the Shopify Admin</a></li>
 
-  <li><a href="#" onclick="Shopify.API.flashNotice('Yay! Someone save a kitty from a tree!');">Successful flash notice!</a></li>
-  <li><a href="#" onclick="Shopify.API.flashError('An error occurred. I\'m angry and red.');">Error flash notice!</a></li>
+  <li><a href="#" onclick="ShopifyApp.flashNotice('Yay! Someone save a kitty from a tree!');">Successful flash notice</a></li>
+  <li><a href="#" onclick="ShopifyApp.flashError('An error occurred. I\'m angry and red.');">Error flash notice</a></li>
 </ul>

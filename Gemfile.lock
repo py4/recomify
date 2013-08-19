@@ -30,6 +30,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     builder (3.0.4)
+    coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -67,6 +68,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.1)
     mime-types (1.23)
     multi_json (1.7.8)
     multipart-post (1.2.0)
@@ -85,6 +87,12 @@ GEM
     omniauth-shopify-oauth2 (1.1.0)
       omniauth-oauth2 (~> 1.1.0)
     polyglot (0.3.3)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry-rails (0.3.1)
+      pry (>= 0.9.10)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.4.5)
@@ -126,6 +134,7 @@ GEM
       omniauth-shopify-oauth2 (= 1.1.0)
       rails (>= 3.1, < 5.0)
       shopify_api (~> 3.0.0)
+    slop (3.4.5)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -156,6 +165,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   less-rails-bootstrap
+  pry-rails
   quiet_assets
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)

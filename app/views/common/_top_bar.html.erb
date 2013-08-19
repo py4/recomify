@@ -1,8 +1,8 @@
 <script type="text/javascript">
   window.mainPageTitle = 'Main Page';
 
-  Shopify.API.ready(function(){
-    Shopify.API.Bar.initialize({
+  ShopifyApp.ready(function(){
+    ShopifyApp.Bar.initialize({
       'title': window.mainPageTitle,
       'icon': 'http://localhost:3000/icon.png',
       'buttons': [
@@ -14,6 +14,6 @@
       ]
     });
 
-    Shopify.API.Bar.loadingOff();
+    ShopifyApp.Bar.loadingOff();
   });
 </script>
