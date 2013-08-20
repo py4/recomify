@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <title>Shopify Embedded Example App</title>
-  <!-- 
-    LOAD THE Shopify.API lib
-    <script src="http://<SHOP_URL>/admin/api/<APP API_KEY>/api.js" type="text/javascript"></script>
-  -->
-  <script src="http://<%=shop_session.url%>/admin/api/<%= ShopifyApp.configuration.api_key %>/api.js" type="text/javascript"></script>
+
+  <script src="//cdn.shopify.com/s/assets/external/app.js"></script>
+  <script type="text/javascript">
+    ShopifyApp.init({
+      apiKey: "<%= ShopifyApp.configuration.api_key %>",  // Expects: 32 character API key string like ff9b1d04414785029e066f8fd0465d00
+      shopOrigin: "<%= "https://#{ session[:shopify].url }" if session[:shopify] %>",  // Expects: https://exampleshop.myshopify.com
+      debug: true
+    });
+  </script>
 
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'application' %>

@@ -1,8 +1,8 @@
 <script type="text/javascript">
   window.mainPageTitle = 'Regular Page';
 
-  Shopify.API.ready(function(){
-    Shopify.API.Bar.initialize({
+  ShopifyApp.ready(function(){
+    ShopifyApp.Bar.initialize({
       'title': window.mainPageTitle,
       'buttons': [
         { label: "Open Google [external]", action: function(){  
@@ -14,7 +14,7 @@
       ]
     });
 
-    Shopify.API.Bar.loadingOff();
+    ShopifyApp.Bar.loadingOff();
   });
 </script>
 
