@@ -3,17 +3,15 @@
 
   ShopifyApp.ready(function(){
     ShopifyApp.Bar.initialize({
-      'title': window.mainPageTitle,
-      'icon': 'http://localhost:3000/icon.png',
-      'buttons': [
+      title: window.mainPageTitle,
+      icon: 'https://embedded-app-example.herokuapp.com/icon.png',
+      buttons: [
         { 
-          label: "Help", action: function(){  
-            window.location = "/help"; 
-          }
+          label: "Documentation",
+          href: "https://github.com/Shopify/embedded-app-example/wiki/Embedded-App-API-Documentation",
+          target: 'new'
         }
       ]
     });
-
-    ShopifyApp.Bar.loadingOff();
   });
 </script>

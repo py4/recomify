@@ -15,10 +15,13 @@ class HomeController < ApplicationController
   end
 
   def form_page
-  end
-
-  def save_unicorns
-    @unicorns_qty = params[:unicorns_qty]
+    if request.post?
+      if params[:name].present?
+        flash[:notice] = "Created #{ params[:colour] } unicorn: #{ params[:name] }."
+      else
+        flash[:error] = "Name must be set."
+      end
+    end
   end
   
 end

@@ -1,29 +1,10 @@
 <%= render "/common/top_bar" %>
 
-<p>Shopify Embedded Example.</p>
+<h2>Shopify Embedded Example.</h2>
 
 <p>This application demos the various ways an app can now interact with the Shopify Admin. See the project README for details.</p>
 
-<p>Links work normally: <a href="regular_app_page">Another page in the app</a></p>
-
-<!-- 
-  This is example code, focusing on simplicity.
-  Try not to use 'onclick' attributes in real applications. Use unobtrusive JavaScript instead.
-  http://en.wikipedia.org/wiki/Unobtrusive_JavaScript)
--->
-
-<h2>Modal Pages</h2>
-<ul>
-  <li><a href="#" onclick="ShopifyApp.Modal.alert('Put your alert message here!')">Alert alert</a></li>
-  <li><a href="#" onclick="confirmModal()">Confirm modal</a></li>
-  <li><a href="#" onclick="inputModal('May I ask you something?')">Prompt modal</a></li>
-  <li><a href="#" onclick="newModal('<%= modal_url %>?name=CaptainHook','This is a custom modal title')">Modal window containing an iframe</a></li>
-</ul>
-
-<h2>Forms</h2>
-<ul>
-  <li><a href="form_page">Go to form page</a></li>
-</ul>
+<p><a href="regular_app_page">Links to another page</a> work normally.</p>
 
 <h2>Function calls</h2>
 <ul>
@@ -32,6 +13,28 @@
   <li><a href="#" onclick="window.mainPageTitle = window.mainPageTitle + '!'; ShopifyApp.Bar.setTitle(window.mainPageTitle)">Add an exclamation mark to the title</a></li>
   <li><a href="#" onclick="ShopifyApp.redirect('/orders')">Redirect to /orders within the Shopify Admin</a></li>
 
-  <li><a href="#" onclick="ShopifyApp.flashNotice('Yay! Someone save a kitty from a tree!');">Successful flash notice</a></li>
-  <li><a href="#" onclick="ShopifyApp.flashError('An error occurred. I\'m angry and red.');">Error flash notice</a></li>
+  <li><a href="#" onclick="ShopifyApp.flashNotice('Flash a notice message.');">Flash notice</a></li>
+  <li><a href="#" onclick="ShopifyApp.flashError('Flash an error message.');">Flash error</a></li>
+</ul>
+
+
+<!-- 
+  This is example code, focusing on simplicity.
+  Try not to use 'onclick' attributes in real applications. Use unobtrusive JavaScript instead.
+  http://en.wikipedia.org/wiki/Unobtrusive_JavaScript)
+
+  See modals.js for the implementation of these calls.
+-->
+
+<h2>Modal Windows</h2>
+<ul>
+  <li><a href="#" onclick="alertModal()">Alert modal</a></li>
+  <li><a href="#" onclick="confirmModal()">Confirm modal</a></li>
+  <li><a href="#" onclick="inputModal('Enter a value:')">Prompt modal</a></li>
+  <li><a href="#" onclick="newModal('<%= modal_url %>?name=CaptainHook','This is a custom modal title')">Modal window containing an iframe</a></li>
+</ul>
+
+<h2>Forms</h2>
+<ul>
+  <li><a href="form_page">Go to form page</a></li>
 </ul>

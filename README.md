@@ -30,3 +30,9 @@ To install the application on your dev-shop go to:
     http://localhost:3000/login?shop=<yourdevshop-url.myshopify.com>
 
 You will be prompted to install the application and will be redirected to the embedded Shopify environment once installed.
+
+# Documentation
+
+The documentation on how to use the `ShopifyApp` Javascript file can be found here:
+
+https://github.com/Shopify/embedded-app-example/wiki/Embedded-App-API-Documentation

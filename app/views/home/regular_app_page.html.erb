@@ -5,16 +5,18 @@
     ShopifyApp.Bar.initialize({
       'title': window.mainPageTitle,
       'buttons': [
-        { label: "Open Google [external]", action: function(){  
-            window.top.location.href = "http://www.google.com"; 
-        }},
-        { label: "Help", action: function(){  
-            window.location = "/help"; 
-        }}
+        { 
+          label: "Documentation",
+          href: "https://github.com/Shopify/embedded-app-example/wiki/Embedded-App-API-Documentation",
+          target: 'new'
+        },
+        { 
+          label: "Back",
+          href: "/",
+          target: 'app'
+        }
       ]
     });
-
-    ShopifyApp.Bar.loadingOff();
   });
 </script>
 

@@ -9,8 +9,7 @@ EmbededApp::Application.routes.draw do
   get 'regular_app_page' => "home#regular_app_page"
   get 'help' => "home#help"
   get 'form_page' => "home#form_page"
-
-  post 'save_unicorns' => "home#save_unicorns"
+  post 'form_page' => "home#form_page"
 
   root :to => 'home#index'
 end

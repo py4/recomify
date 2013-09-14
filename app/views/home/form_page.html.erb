@@ -3,32 +3,50 @@
 
   ShopifyApp.ready(function(){
     ShopifyApp.Bar.initialize({
-      'title': window.mainPageTitle,
-      'icon': 'http://localhost:3000/icon.png',
-      'buttons': [
-        { 
-          label: "Save Unicorn",
-          message: 'save_unicorn'
-        },
+      title: window.mainPageTitle,
+      icon: 'https://embedded-app-example.herokuapp.com/icon.png',
+      buttons: [
         {
           label: "Back",
-          action: function(){
-            window.location = "/";
-          }
+          href: "/",
+          target: 'app'
         }
-      ]
+      ],
+      primaryButton: { 
+        label: "Create Unicorn",
+        message: 'save-unicorn-form-message'
+      }
     });
 
-    ShopifyApp.Bar.loadingOff();
+  <% if flash[:notice] %>
+    ShopifyApp.flashNotice("<%= flash[:notice] %>");
+  <% end %>
+
+  <% if flash[:error] %>
+    ShopifyApp.flashError("<%= flash[:error] %>");
+  <% end %>
+
   });
 </script>
 
+<h1>Create new Unicorn</h1>
 
-<h2>Use the top bar to submit the form.</h2>
+<p>A normal form submitted by a data tag and a button in Shopify. Embedded apps can mostly work exactly like a normal app, except with Shopify admin UI integration.</p>
 
-<form method="POST" action="save_unicorns" data-shopify-app-submit="save_unicorn">
+<form method="POST" action="form_page" data-shopify-app-submit="save-unicorn-form-message">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-  <label>How many unicorns do you want to save?</label>
-  <input type="text" name="unicorns_qty"/>
+  <p>
+    <label>Name:</label>
+    <input type="text" name="name"/>
+  </p>
   
+  <p>
+    <label>Colour:</label>
+    <select name="colour">
+      <option>Pink</option>
+      <option>Rainbow</option>
+      <option>Purple</option>
+    </select>
+  </p>
+
 </form>

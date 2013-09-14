@@ -3,7 +3,7 @@
 <head>
   <title>Shopify Embedded Example App</title>
 
-  <script src="//cdn.shopify.com/s/assets/external/app.js"></script>
+  <script src="//cdn.shopify.com/s/assets/external/app.js?<%= Time.now.strftime('%Y%m%d%H') %>"></script>
   <script type="text/javascript">
     ShopifyApp.init({
       apiKey: "<%= ShopifyApp.configuration.api_key %>",  // Expects: 32 character API key string like ff9b1d04414785029e066f8fd0465d00
