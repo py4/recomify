@@ -15,6 +15,7 @@
 
   <li><a href="#" onclick="ShopifyApp.flashNotice('Flash a notice message.');">Flash notice</a></li>
   <li><a href="#" onclick="ShopifyApp.flashError('Flash an error message.');">Flash error</a></li>
+  <li><a href="#" onclick="ShopifyApp.Bar.setPagination({previous: {loading: false, callback: function(){alert('Previous clicked'); } }}); return false">Add pagination buttons</a></li>
 </ul>
 
 
@@ -34,7 +35,8 @@
   <li><a href="#" onclick="newModal('<%= modal_url %>?name=CaptainHook','This is a custom modal title')">Modal window containing an iframe</a></li>
 </ul>
 
-<h2>Forms</h2>
+<h2>Integrations</h2>
 <ul>
   <li><a href="form_page">Go to form page</a></li>
+  <li><a href="pagination">Pagination links</a></li>
 </ul>

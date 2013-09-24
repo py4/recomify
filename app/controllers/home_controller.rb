@@ -23,5 +23,12 @@ class HomeController < ApplicationController
       end
     end
   end
-  
+
+  def pagination
+    @total_pages = 3
+    @page = (params[:page].presence || 1).to_i
+    @previous_page = "/pagination?page=#{ @page - 1 }" if @page > 1
+    @next_page = "/pagination?page=#{ @page + 1 }" if @page < @total_pages
+  end
+
 end
