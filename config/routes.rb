@@ -11,6 +11,7 @@ EmbededApp::Application.routes.draw do
   get 'pagination' => "home#pagination"
   get 'form_page' => "home#form_page"
   post 'form_page' => "home#form_page"
+  get 'error' => 'home#error'
 
   root :to => 'home#index'
 end

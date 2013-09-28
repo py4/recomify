@@ -14,6 +14,10 @@ class HomeController < ApplicationController
   def help
   end
 
+  def error
+    raise "An error page"
+  end
+
   def form_page
     if request.post?
       if params[:name].present?
