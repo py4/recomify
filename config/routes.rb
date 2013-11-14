@@ -9,6 +9,7 @@ EmbededApp::Application.routes.draw do
   get 'regular_app_page' => "home#regular_app_page"
   get 'help' => "home#help"
   get 'pagination' => "home#pagination"
+  get 'breadcrumbs' => "home#breadcrumbs"
   get 'form_page' => "home#form_page"
   post 'form_page' => "home#form_page"
   get 'error' => 'home#error'
