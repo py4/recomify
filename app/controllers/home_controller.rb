@@ -8,7 +8,13 @@ class HomeController < ApplicationController
   def modal
   end
 
+  def modal_buttons
+  end
+
   def regular_app_page
+  end
+
+  def buttons
   end
 
   def help

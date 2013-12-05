@@ -58,3 +58,44 @@ window.newModal = function(path, title){
       ShopifyApp.flashNotice("'Cancel' button pressed")
   });
 }
+
+window.newButtonModal = function(path, title){
+  ShopifyApp.Modal.open({
+    src: path,
+    title: title,
+    height: 400,
+    width: 'large',
+    buttons: {
+      primary: {
+        label: "Yes",
+        callback: function(){ alert("'Yes' button clicked"); }
+      },
+      secondary: [
+        {
+          label: "Close",
+          callback: function(message){ ShopifyApp.Modal.close("close"); } 
+        },
+        {
+          label: "Normal",
+          callback: function(){ alert("'Normal' button clicked"); }
+        }
+      ],
+      tertiary: [
+        {
+          label: "Danger",
+          style: "danger",
+          callback: function(){ alert("'Danger' button clicked"); }
+        },
+        {
+          label: "Disabled", 
+          style: "disabled"
+        }
+      ]
+    },
+  }, function(result){
+    if (result)
+      ShopifyApp.flashNotice("'" + result + "' button pressed")
+    else
+      ShopifyApp.flashNotice("No result returned")
+  });
+}
