@@ -35,4 +35,4 @@ You will be prompted to install the application and will be redirected to the em
 
 The documentation on how to use the `ShopifyApp` Javascript file can be found here:
 
-https://github.com/Shopify/embedded-app-example/wiki/Embedded-App-API-Documentation
+http://docs.shopify.com/embedded-app-sdk
