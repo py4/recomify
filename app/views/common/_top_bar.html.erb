@@ -5,13 +5,13 @@
     ShopifyApp.Bar.initialize({
       title: window.mainPageTitle,
       icon: 'https://embedded-app-example.herokuapp.com/icon.png',
-      buttons: [
-        { 
+      buttons: {
+        secondary: {
           label: "Documentation",
           href: "http://docs.shopify.com/embedded-app-sdk",
           target: 'new'
         }
-      ]
+      }
     });
   });
 </script>

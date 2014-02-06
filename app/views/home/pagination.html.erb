@@ -5,13 +5,13 @@
     ShopifyApp.Bar.initialize({
       title: window.mainPageTitle,
       icon: 'https://embedded-app-example.herokuapp.com/icon.png',
-      buttons: [
-        {
+      buttons: {
+        secondary: {
           label: "Back",
           href: "/",
           target: 'app'
         }
-      ],
+      },
       pagination: {
         previous: <%= (@previous_page.present? ? {href: @previous_page} : nil).to_json.html_safe %>,
         next: <%= (@next_page.present? ? {href: @next_page} : nil).to_json.html_safe %>

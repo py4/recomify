@@ -36,21 +36,21 @@ window.newModal = function(path, title){
     title: title,
     height: 400,
     width: 'large',
-    primaryButton: { 
-      label: "OK", 
-      message: 'modal_ok', 
-      callback: function(message){ 
-        ShopifyApp.Modal.close("ok"); 
+    buttons: {
+      primary: {
+        label: "OK",
+        message: 'modal_ok',
+        callback: function(message){
+          ShopifyApp.Modal.close("ok");
+        }
+      },
+      secondary: {
+        label: "Cancel",
+        callback: function(message){
+          ShopifyApp.Modal.close("cancel");
+        }
       }
     },
-    buttons: [
-      { 
-        label: "Cancel", 
-        callback: function(message){ 
-          ShopifyApp.Modal.close("cancel"); 
-        } 
-      }
-    ],
   }, function(result){
     if (result == "ok")
       ShopifyApp.flashNotice("'Ok' button pressed")
@@ -73,7 +73,7 @@ window.newButtonModal = function(path, title){
       secondary: [
         {
           label: "Close",
-          callback: function(message){ ShopifyApp.Modal.close("close"); } 
+          callback: function(message){ ShopifyApp.Modal.close("close"); }
         },
         {
           label: "Normal",
@@ -87,7 +87,7 @@ window.newButtonModal = function(path, title){
           callback: function(){ alert("'Danger' button clicked"); }
         },
         {
-          label: "Disabled", 
+          label: "Disabled",
           style: "disabled"
         }
       ]

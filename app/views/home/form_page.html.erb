@@ -5,16 +5,16 @@
     ShopifyApp.Bar.initialize({
       title: window.mainPageTitle,
       icon: 'https://embedded-app-example.herokuapp.com/icon.png',
-      buttons: [
-        {
+      buttons: {
+        primary: {
+          label: "Create Unicorn",
+          message: 'save-unicorn-form-message'
+        },
+        secondary: {
           label: "Back",
           href: "/",
           target: 'app'
         }
-      ],
-      primaryButton: { 
-        label: "Create Unicorn",
-        message: 'save-unicorn-form-message'
       }
     });
 
@@ -39,7 +39,7 @@
     <label>Name:</label>
     <input type="text" name="name"/>
   </p>
-  
+
   <p>
     <label>Colour:</label>
     <select name="colour">
