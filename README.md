@@ -8,7 +8,7 @@ The example uses Ruby on Rails as a backend framework but the Shopify Embedded A
 
 Clone the repo from git:
 
-    git clone git@github.com:Shopify/embedded-app-example.git
+    git clone http://github.com/Shopify/embedded-app-example.git
     cd embedded-app-example
 
 To add your application credentials:
