@@ -7,7 +7,7 @@
   <script type="text/javascript">
     ShopifyApp.init({
       apiKey: "<%= ShopifyApp.configuration.api_key %>",  // Expects: 32 character API key string like ff9b1d04414785029e066f8fd0465d00
-      shopOrigin: "<%= "https://#{ session[:shopify].url }" if session[:shopify] %>",  // Expects: https://exampleshop.myshopify.com
+      shopOrigin: "<%= "https://#{ @shop_session.url }" if @shop_session %>",  // Expects: https://exampleshop.myshopify.com
       debug: true
     });
   </script>
