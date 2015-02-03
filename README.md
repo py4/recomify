@@ -1,6 +1,6 @@
 # Shopify Embedded Application Example
 
-This is an example application for building Shopify Embedded Applications. Your application credentials need to have embedded access make see this example work locally.
+This is an example application for building Shopify Embedded Applications. Your application credentials need to have embedded access to make this example work locally.
 
 The example uses Ruby on Rails as a backend framework but the Shopify Embedded API is JavaScript based, so it is backend language/framework agnostic. Use this as a reference.
 
