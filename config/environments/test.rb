@@ -34,4 +34,7 @@ EmbededApp::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # Active Record eager loading
+  config.eager_load = true
 end
