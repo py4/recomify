@@ -16,9 +16,9 @@ class SessionsController < ApplicationController
       redirect_to :action => 'new'
     end
   end
-  
+
   protected
-  
+
   def authenticate
     #
     # Instead of doing a backend redirect we need to do a javascript redirect
@@ -31,18 +31,20 @@ class SessionsController < ApplicationController
       redirect_to return_address
     end
   end
-  
+
   def return_address
     session[:return_to] || root_url
   end
-  
+
   def sanitize_shop_param(params)
     return unless params[:shop].present?
+    return unless domain = Rails.configuration.shopify_domain
+
     name = params[:shop].to_s.strip
-    name += '.myshopify.com' if !name.include?("myshopify.com") && !name.include?(".")
+    name += ".#{domain}" if !name.include?(domain) && !name.include?(".")
     name.sub!(%r|https?://|, '')
 
     u = URI("http://#{name}")
-    u.host.ends_with?(".myshopify.com") ? u.host : nil
+    u.host.ends_with?(".#{domain}") ? u.host : nil
   end
 end
