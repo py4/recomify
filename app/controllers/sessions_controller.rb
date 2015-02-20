@@ -38,7 +38,7 @@ class SessionsController < ApplicationController
 
   def sanitize_shop_param(params)
     return unless params[:shop].present?
-    return unless domain = Rails.configuration.shopify_domain
+    return unless domain = ShopifyApp.configuration.myshopify_domain || "myshopify.com"
 
     name = params[:shop].to_s.strip
     name += ".#{domain}" if !name.include?(domain) && !name.include?(".")
