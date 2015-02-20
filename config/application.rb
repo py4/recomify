@@ -57,6 +57,6 @@ module EmbededApp
     config.assets.version = '1.0'
 
     # Shopify Domain
-    config.shopify_domain = "myshopify.com"
+    config.shopify_domain = ShopifyApp.configuration.myshopify_domain || "myshopify.com"
   end
 end
