@@ -1,17 +1,15 @@
-class RecommendationsController < ApplicationController
+class RecomifyController < ApplicationController
   around_filter :shopify_session
-  
-  def settings
+
+  def index_settings
   end
 
   def update_settings
     s = Shop.instance
     s.settings = params[:shop][:settings]
     s.save!
-    puts "settings flash"
     flash[:notice] = "Updated form style"
-    redirect_to settings_recommendations_path
-    #render 'settings'
+    redirect_to index_settings_recomify_path
   end
 
 end

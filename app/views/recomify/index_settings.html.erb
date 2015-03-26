@@ -41,7 +41,7 @@
               <div class="section-row">
                 <div class="section-cell">
 
-                  <%= simple_form_for Shop.instance, url: update_settings_recommendations_path, method: :put do |f| %>
+                  <%= simple_form_for Shop.instance, url: update_settings_recomify_path, method: :put do |f| %>
                     <%= f.simple_fields_for :settings do |d| %>
                       <% f.object.settings.keys.each_slice(2) do |arr| %>
 

@@ -6,9 +6,8 @@ EmbededApp::Application.routes.draw do
   end
 
 
-  resource :recommendations, only: [] do
-    get 'index'
-    get 'settings'
+  resource :recomify, only: [] do
+    get 'index_settings'
     put 'update_settings'
   end
 
@@ -23,7 +22,7 @@ EmbededApp::Application.routes.draw do
   post 'form_page' => "home#form_page"
   get 'error' => 'home#error'
   get 'index' => 'home#index'
-  
-  root :to => 'recommendations#settings'
+
+  root :to => 'recomify#index_settings'
   #root :to => 'home#index'
 end
