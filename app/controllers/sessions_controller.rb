@@ -27,6 +27,7 @@ class SessionsController < ApplicationController
     if shop_name = sanitize_shop_param(params)
       @redirect_url = "/auth/shopify?shop=#{shop_name}"
       render "/common/iframe_redirect", :format => [:html], layout: false
+      Shop.instance
     else
       redirect_to return_address
     end

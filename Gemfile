@@ -1,11 +1,16 @@
 source "https://rubygems.org"
-ruby "2.1.5"
+#ruby "2.1.5"
 
 gem "rails", "4.2.0"
 
+gem 'rb-readline'
 gem "shopify_app", "~> 5.0.2"
 gem "jquery-rails"
 gem "quiet_assets"
+gem "acts_as_singleton"
+gem "pg"
+gem "simple_form"
+gem 'jquery-minicolors-rails'
 
 group :assets do
   gem "sass-rails"
@@ -18,9 +23,4 @@ group :development, :test do
   gem "less-rails-bootstrap"
   gem "therubyracer", platforms: :ruby
   gem "pry-rails"
-  gem "sqlite3"
-end
-
-group :production do
-  gem "pg"
 end

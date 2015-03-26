@@ -1,0 +1,75 @@
+<script type="text/javascript">
+   window.mainPageTitle = 'Form Settings';
+  ShopifyApp.ready(function(){
+    ShopifyApp.Bar.initialize({
+      title: window.mainPageTitle,
+      icon: '/icon.png',
+      buttons: {
+        primary: {
+          label: "Create Unicorn",
+          message: 'save-unicorn-form-message'
+        },
+        secondary: {
+          label: "Back",
+          href: "/",
+          target: 'app'
+        }
+      }
+    });
+
+  <% if flash[:notice] %>
+    ShopifyApp.flashNotice("<%= flash[:notice] %>");
+  <% end %>
+
+  <% if flash[:error] %>
+    ShopifyApp.flashError("<%= flash[:error] %>");
+  <% end %>
+
+  });
+</script>
+
+<!-- This is a section -->
+<div class="section">
+  <div class="section-content">
+    <div class="section-row">
+      <div class="section-listing">
+        <div class="section-options">
+          <%= render partial: 'setting_bar' %>
+          <div class="section-content">
+
+            <div class="section-content inline-block">
+              <div class="section-row">
+                <div class="section-cell">
+
+                  <%= simple_form_for Shop.instance, url: update_settings_recommendations_path, method: :put do |f| %>
+                    <%= f.simple_fields_for :settings do |d| %>
+                      <% f.object.settings.keys.each_slice(2) do |arr| %>
+
+                        <div class="cell-container">
+                          <% arr.each do |key| %>
+                            <div class="cell-column">
+                              <% if key.include? "color" %>
+                                <%= d.input key, :input_html => {:value => f.object.settings[key], :style => 'width: 15em'}, :required => false, as: :minicolors%>
+                              <% else %>
+                                <%= d.input key, :input_html => {:value => f.object.settings[key], :style => 'width: 15em'}, :required => false%>
+                              <% end %>
+                            </div>
+                          <% end %>
+                        </div>
+
+                      <% end %>
+                    <% end %>
+                    <center> <%= f.submit 'Update form style', :class => 'btn primary' %> </center>
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
