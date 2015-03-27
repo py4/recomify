@@ -6,10 +6,12 @@ EmbededApp::Application.routes.draw do
   end
 
 
-  resource :recomify, only: [] do
+  resource :recomify, controller: :recomify, only: [] do
     get 'index_settings'
     put 'update_settings'
   end
+
+  resources :recommendations, only: [:create]
 
   get 'modal' => "home#modal", :as => :modal
   get 'modal_buttons' => "home#modal_buttons", :as => :modal_buttons

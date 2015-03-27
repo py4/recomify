@@ -5,6 +5,7 @@ gem "rails", "4.2.0"
 
 gem 'rb-readline'
 gem "shopify_app", "~> 5.0.2"
+#gem  'shopify_app', path: '/home/pooya/projects/shopify_app'
 gem "jquery-rails"
 gem "quiet_assets"
 gem "acts_as_singleton"

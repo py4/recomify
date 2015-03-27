@@ -7,8 +7,10 @@ class SessionsController < ApplicationController
 
   def show
     if response = request.env['omniauth.auth']
-      sess = ShopifyAPI::Session.new(params[:shop], response['credentials']['token'])
+      sess = ShopifyAPI::Session.new(params[:shop],response['credentials']['token'])
       session[:shopify] = ShopifySessionRepository.store(sess)
+      #ShopifyAPI::Base.activate_session(Marshal::load session[:shopify])
+
       flash[:notice] = "Logged in"
       redirect_to return_address
     else
