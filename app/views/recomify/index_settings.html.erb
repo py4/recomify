@@ -49,9 +49,9 @@
                           <% arr.each do |key| %>
                             <div class="cell-column">
                               <% if key.include? "color" %>
-                                <%= d.input key, :input_html => {:value => f.object.settings[key], :style => 'width: 15em'}, :required => false, as: :minicolors%>
+                                <%= d.input key, :input_html => {:value => f.object.settings[key], :style => 'width: 200px'}, :required => false, as: :minicolors%>
                               <% else %>
-                                <%= d.input key, :input_html => {:value => f.object.settings[key], :style => 'width: 15em'}, :required => false%>
+                                <%= d.input key, :input_html => {:value => f.object.settings[key], :style => 'width: 226px'}, :required => false%>
                               <% end %>
                             </div>
                           <% end %>

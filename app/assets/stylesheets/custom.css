@@ -1,3 +1,8 @@
 .inline-block {
 	display: table;
 }
+
+.minicolors-theme-default .minicolors-input {
+  height: 28px;
+  width: 100%
+}

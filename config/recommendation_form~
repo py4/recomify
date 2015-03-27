@@ -29,15 +29,8 @@
 
   <input placeholder="Email of your friend" type="text" name="recommendation[email]"/>
   <textarea placeholder="Your comment about this product" name="recommendation[comment]"></textarea>
-
   <input value="{{product.id}}" type="hidden" name="recommendation[product_id]"/>
-  <input value="{{product.title}}" type="hidden" name="recommendation[product_name]"/>
-  <input value="{{product.url}}" type="hidden" name="recommendation[product_url]"/>
-
-  <input value="{{customer.id}}" type="hidden" name="customer[customer_id]"/>
-  <input value="{{customer.name}}" type="hidden" name="customer[name]"/>
-  <input value="{{customer.email}}" type="hidden" name="customer[email]"/>
-
+  <input value="{{customer.id}}" type="hidden" name="recommendation[customer_id]"/>
   <input type="submit" name="commit" value="Send my recommendation!" class="btn"/>
 </form>
 </div>
