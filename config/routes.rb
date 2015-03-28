@@ -11,7 +11,7 @@ EmbededApp::Application.routes.draw do
     put 'update'
   end
 
-  resources :recommendations, only: [:create, :index]
+  resources :recommendations, only: [:create, :index, :show]
   
 
   get 'modal' => "home#modal", :as => :modal

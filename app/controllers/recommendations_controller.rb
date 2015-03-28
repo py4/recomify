@@ -2,7 +2,12 @@ class RecommendationsController < ApplicationController
 
   around_filter :shopify_session
 
+  def show
+    @recommendation = Recommendation.find(params[:id])
+  end
+
   def index
+    @shop_url = shop_url
     @recommendations = Recommendation.includes(:customer).all
   end
 
