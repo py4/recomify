@@ -29,7 +29,7 @@
                 <td><%= customer.name %></td>
                 <td><%= customer.email %></td>
                 <td><%= customer.recommendations.size %></td>
-                <td><a href="#" class="btn primary">Customer Profile</a></td>
+                <td><a href="#" onclick="ShopifyApp.redirect('/customers/<%= customer.customer_id %>');" class="btn primary">Customer Profile</a></td>
                 </tr>
               <% end %>
                 </tbody>
