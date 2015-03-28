@@ -1,0 +1,30 @@
+<script type="text/javascript">
+window.mainPageTitle = "Recommendations by <%= @customer.name %> ";
+
+ShopifyApp.ready(function(){
+  ShopifyApp.Bar.initialize({
+    title: window.mainPageTitle,
+    buttons: {
+      secondary: [
+        {
+          label: "Back",
+          href: "<%=customers_path%>",
+          target: 'app'
+        }
+      ]
+    }
+  });
+});
+</script>
+
+
+<div class="section">
+  <div class="section-content">
+    <div class="section-row">
+      <div class="section-cell">
+        <table class="table-section">
+          <%= render partial: 'recommendations/recommendation_partial', locals: {recommendations: @customer.recommendations, shop_url: shop_url} %>
+      </div>
+    </div>
+  </div>
+</div>            

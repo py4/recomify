@@ -12,7 +12,7 @@ EmbededApp::Application.routes.draw do
   end
 
   resources :recommendations, only: [:create, :index, :show]
-  resources :customers, only: [:index]
+  resources :customers, only: [:index, :show]
 
   get 'modal' => "home#modal", :as => :modal
   get 'modal_buttons' => "home#modal_buttons", :as => :modal_buttons

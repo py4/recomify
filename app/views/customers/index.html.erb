@@ -21,6 +21,7 @@
                   <th><b>Email</b></th>
                   <th><b>Num of Recommendations</b></th>
                   <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -29,6 +30,7 @@
                 <td><%= customer.name %></td>
                 <td><%= customer.email %></td>
                 <td><%= customer.recommendations.size %></td>
+                <td><a href="<%= customer_path customer %>" class="btn default">Show Recommendations</a></td>
                 <td><a href="#" onclick="ShopifyApp.redirect('/customers/<%= customer.customer_id %>');" class="btn primary">Customer Profile</a></td>
                 </tr>
               <% end %>

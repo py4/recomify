@@ -1,20 +1,8 @@
 <script type="text/javascript">
-   window.mainPageTitle = 'Form Settingssss';
+   window.mainPageTitle = 'Form Settings';
   ShopifyApp.ready(function(){
     ShopifyApp.Bar.initialize({
-      title: window.mainPageTitle,
-      icon: '/icon.png',
-      buttons: {
-        primary: {
-          label: "Create Unicorn",
-          message: 'save-unicorn-form-message'
-        },
-        secondary: {
-          label: "Back",
-          href: "/",
-          target: 'app'
-        }
-      }
+      title: window.mainPageTitle
     });
 
   <% if flash[:notice] %>
