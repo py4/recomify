@@ -1,4 +1,11 @@
 class RecommendationsController < ApplicationController
+
+  around_filter :shopify_session
+
+  def index
+    @recommendations = Recommendation.includes(:customer).all
+  end
+
   def create
     customer = Customer.find_or_initialize_by(email: params[:customer_email])
     unless customer.persisted?

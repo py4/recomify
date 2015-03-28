@@ -1,5 +1,5 @@
 <script type="text/javascript">
-   window.mainPageTitle = 'Form Settings';
+   window.mainPageTitle = 'Form Settingssss';
   ShopifyApp.ready(function(){
     ShopifyApp.Bar.initialize({
       title: window.mainPageTitle,
@@ -34,14 +34,14 @@
     <div class="section-row">
       <div class="section-listing">
         <div class="section-options">
-          <%= render partial: 'setting_bar' %>
+          <%= render partial: 'common/setting_bar' %>
           <div class="section-content">
 
             <div class="section-content inline-block">
               <div class="section-row">
                 <div class="section-cell">
 
-                  <%= simple_form_for Shop.instance, url: update_settings_recomify_path, method: :put do |f| %>
+                  <%= simple_form_for Shop.instance, url: recomify_path, method: :put do |f| %>
                     <%= f.simple_fields_for :settings do |d| %>
                       <% f.object.settings.keys.each_slice(2) do |arr| %>
 

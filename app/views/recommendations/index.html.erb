@@ -1,0 +1,46 @@
+<script type="text/javascript">
+  window.mainPageTitle = 'Recommendations';
+  ShopifyApp.ready(function(){
+    ShopifyApp.Bar.initialize({
+      title: window.mainPageTitle
+    });
+  });
+</script>
+
+<div class="section">
+  <div class="section-content">
+    <div class="section-row">
+      <div class="section-listing">
+        <div class="section-options">
+          <%= render partial: 'common/setting_bar' %>
+          <div class="section-content">
+            <table class="table-section">
+              <thead>
+                <tr>
+                  <th><b>From Customer</b></th>
+                  <th><b>Sent to</b></th>
+                  <th><b>Product name</b></th>
+                  <th><b>At</b></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              <% @recommendations.each do |recommendation| %>
+                <tr>
+                <td><%= recommendation.customer.name %></td>
+                <td><%= recommendation.email %></td>
+                <td><a href="<%= recommendation.product_url %>"><%=recommendation.product_name%></a> </td>
+                <td><%= recommendation.created_at %> </td>
+                <td><a href="#" onclick="newModal('http://localhost:3000/modal','This is a custom modal title')">Modal window containing an iframe</a></td>
+                </tr>
+              <% end %>
+                </tbody>
+              </table>    
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
