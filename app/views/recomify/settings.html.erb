@@ -5,15 +5,8 @@
       title: window.mainPageTitle
     });
 
-  <% if flash[:notice] %>
-    ShopifyApp.flashNotice("<%= flash[:notice] %>");
-  <% end %>
-
-  <% if flash[:error] %>
-    ShopifyApp.flashError("<%= flash[:error] %>");
-  <% end %>
-
-  });
+  <%= render partial: 'common/flash' %>
+});
 </script>
 
 <!-- This is a section -->

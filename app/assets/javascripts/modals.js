@@ -52,10 +52,10 @@ window.newModal = function(path, title){
       }
     },
   }, function(result){
-    if (result == "ok")
+/*    if (result == "ok")
       ShopifyApp.flashNotice("'Ok' button pressed")
     else if (result == "cancel")
-      ShopifyApp.flashNotice("'Cancel' button pressed")
+      ShopifyApp.flashNotice("'Cancel' button pressed") */
   });
 }
 

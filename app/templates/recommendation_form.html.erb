@@ -2,17 +2,17 @@
   .recommendation_form form { 
     display: inline-block;
     padding: 20px;
-    background-color: @bg_color;
+    background-color: <%= bg_color %>;
     border-style: solid;
-    border-color: @border_color;
-    border-width: @border_sizepx;
-    color: @text_color;
-    font-family: @font_family;
-    width: @widthpx;
+    border-color: <%= border_color %>;
+    border-width: <%= border_size %>px;
+    color: <%= text_color %>;
+    font-family: <%= font_family %>;
+    width: <%= width %>px;
   }
 
   .recommendation_form btn {
-    color: @button_color;
+    color: <%= button_color %>;
   }
 
   .recommendation_form input,textarea{
@@ -30,9 +30,12 @@
   <input placeholder="Email of your friend" type="text" name="recommendation[email]"/>
   <textarea placeholder="Your comment about this product" name="recommendation[comment]"></textarea>
 
-  <input value="{{product.id}}" type="hidden" name="recommendation[product_id]"/>
-  <input value="{{product.title}}" type="hidden" name="recommendation[product_name]"/>
-  <input value="{{product.url}}" type="hidden" name="recommendation[product_url]"/>
+  <input value="{{product.id}}" type="hidden" name="product[product_id]"/>
+  <input value="{{product.title}}" type="hidden" name="product[name]"/>
+  <input value="{{product.url}}" type="hidden" name="product[url]"/>
+  <input value="{{product.price}}" type="hidden" name="product[price]" />
+  <input value="{{product.description}}" type="hidden" name="product[description]" />
+
 
   <input value="{{customer.id}}" type="hidden" name="customer[customer_id]"/>
   <input value="{{customer.name}}" type="hidden" name="customer[name]"/>

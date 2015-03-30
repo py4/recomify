@@ -8,20 +8,17 @@ class RecommendationsController < ApplicationController
 
   def index
     @shop_url = Shop.instance.domain
-    @recommendations = Recommendation.includes(:customer).all
+    @recommendations = Recommendation.includes(:customer, :product).all
   end
 
   def create
-    customer = Customer.find_or_initialize_by(email: customer_params[:email])
-    unless customer.persisted?
-      customer = Customer.create customer_params
-      puts "created a customer!"
-    end
-
-    customer.recommendations.create recommendation_params
+    product = Product.find_or_create_by(product_params.merge(shop_id: Shop.instance.id))
+    customer = Customer.find_or_create_by(customer_params.merge(shop_id: Shop.instance.id))
+    Recommendation.create recommendation_params.merge(product_id: product.id, customer_id: customer.id)
   end
 
   private
+
   
   def customer_params
     params.require(:customer).permit(:customer_id,:name, :email)
@@ -29,5 +26,9 @@ class RecommendationsController < ApplicationController
 
   def recommendation_params
     params.require(:recommendation).permit(:email,:comment, :product_id, :product_name, :product_url) 
+  end
+
+  def product_params
+    params.require(:product).permit(:product_id, :name, :description, :url, :price)
   end
 end

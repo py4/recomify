@@ -13,7 +13,7 @@
   <tr>
     <td><%= recommendation.customer.name %></td>
     <td><%= recommendation.email %></td>
-    <td><a href="<%= shop_url+recommendation.product_url %>"><%=recommendation.product_name%></a> </td>
+    <td><a href="#" onclick="ShopifyApp.redirect('<%= product_admin_url recommendation.product %>')"><%=recommendation.product.name%></a> </td>
     <td><%= recommendation.created_at %> </td>
     <td><a href="#" class="btn default" onclick="newModal('<%= recommendation_path(recommendation) %>','Comment')">Show Comment</a></td>
   </tr>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328011409) do
+ActiveRecord::Schema.define(version: 20150330204741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,18 +30,31 @@ ActiveRecord::Schema.define(version: 20150328011409) do
   add_index "customers", ["email"], name: "index_customers_on_email", using: :btree
   add_index "customers", ["shop_id"], name: "index_customers_on_shop_id", using: :btree
 
+  create_table "products", force: :cascade do |t|
+    t.string   "product_id"
+    t.string   "name"
+    t.text     "description"
+    t.string   "url"
+    t.string   "price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "shop_id"
+  end
+
+  add_index "products", ["product_id"], name: "index_products_on_product_id", unique: true, using: :btree
+  add_index "products", ["shop_id"], name: "index_products_on_shop_id", using: :btree
+
   create_table "recommendations", force: :cascade do |t|
     t.integer  "customer_id"
     t.string   "email"
     t.text     "comment"
-    t.string   "product_id"
-    t.string   "product_name"
-    t.string   "product_url"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "product_id"
   end
 
   add_index "recommendations", ["customer_id"], name: "index_recommendations_on_customer_id", using: :btree
+  add_index "recommendations", ["product_id"], name: "index_recommendations_on_product_id", using: :btree
 
   create_table "shops", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -51,5 +64,7 @@ ActiveRecord::Schema.define(version: 20150328011409) do
   end
 
   add_foreign_key "customers", "shops"
+  add_foreign_key "products", "shops"
   add_foreign_key "recommendations", "customers"
+  add_foreign_key "recommendations", "products"
 end

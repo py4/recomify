@@ -25,11 +25,8 @@ class RecomifyController < ApplicationController
 	end
 
   def get_html_form settings
-    content = File.read(File.join(Rails.root.to_s, 'config', 'recommendation_form'))
-    settings.each do |key, value|
-      content.sub! '@'+key, value
-    end
-    return content
+    content = File.read(File.join('app', 'templates', 'recommendation_form.html.erb'))
+    return ERB.new(content).result(OpenStruct.new(settings).instance_eval { binding })
   end
 
 end

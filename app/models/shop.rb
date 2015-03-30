@@ -3,6 +3,7 @@ class Shop < ActiveRecord::Base
   store_accessor :settings
 
   has_many :customers, dependent: :destroy
+  has_many :products, dependent: :destroy
   after_create :initialize_settings
 
   private

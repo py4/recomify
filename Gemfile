@@ -5,7 +5,6 @@ gem "rails", "4.2.0"
 
 gem 'rb-readline'
 gem "shopify_app", "~> 5.0.2"
-#gem  'shopify_app', path: '/home/pooya/projects/shopify_app'
 gem "jquery-rails"
 gem "quiet_assets"
 gem "acts_as_singleton"
@@ -24,4 +23,9 @@ group :development, :test do
   gem "less-rails-bootstrap"
   gem "therubyracer", platforms: :ruby
   gem "pry-rails"
+  gem "byebug"
+  gem "web-console", '~> 2.0'
+  gem "meta_request"
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
