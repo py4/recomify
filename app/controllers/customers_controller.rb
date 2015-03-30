@@ -6,7 +6,6 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @shop_url = Shop.instance.domain
     @customer = Customer.find(params[:id])
   end
 end

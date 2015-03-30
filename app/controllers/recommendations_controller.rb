@@ -7,7 +7,6 @@ class RecommendationsController < ApplicationController
   end
 
   def index
-    @shop_url = Shop.instance.domain
     @recommendations = Recommendation.includes(:customer, :product).all
   end
 
