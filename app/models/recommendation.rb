@@ -6,6 +6,6 @@ class Recommendation < ActiveRecord::Base
 
   def send_email
     puts ">>>> sending email <<<"
-    CustomerMailer.recommendation_email(self).deliver_later
+    Resque.enqueue(RecommendationEmailJob, :customers_email_queue, id)
   end
 end

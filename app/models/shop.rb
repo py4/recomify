@@ -28,5 +28,5 @@ class Shop < ActiveRecord::Base
   def set_additional_data
     Resque.enqueue(ShopAdditionalAttributesSetter, id)
   end
-
+  
 end
