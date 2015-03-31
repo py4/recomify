@@ -13,6 +13,9 @@ gem "simple_form"
 gem 'jquery-minicolors-rails'
 gem 'aws-ses', '~> 0.4.4', require: 'aws/ses'
 gem 'figaro'
+gem 'delayed_job_active_record'
+gem 'foreman'
+gem 'daemons'
 
 group :assets do
   gem "sass-rails"

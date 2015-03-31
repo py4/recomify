@@ -70,6 +70,11 @@ GEM
     commonjs (0.2.7)
     daemons (1.2.2)
     debug_inspector (0.0.2)
+    delayed_job (4.0.6)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.0.3)
+      activerecord (>= 3.0, < 5.0)
+      delayed_job (>= 3.0, < 4.1)
     erubis (2.7.0)
     eventmachine (1.0.7)
     execjs (2.4.0)
@@ -77,6 +82,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     figaro (1.1.0)
       thor (~> 0.14)
+    foreman (0.78.0)
+      thor (~> 0.19.1)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     hashie (3.4.0)
@@ -235,7 +242,10 @@ DEPENDENCIES
   binding_of_caller
   byebug
   coffee-rails
+  daemons
+  delayed_job_active_record
   figaro
+  foreman
   jquery-minicolors-rails
   jquery-rails
   less-rails-bootstrap

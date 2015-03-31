@@ -1,0 +1,3 @@
+production: env for SES
+            delayed_job workers
+            assets compilation
