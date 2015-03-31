@@ -7,7 +7,5 @@ class Recommendation < ActiveRecord::Base
   def send_email
     puts ">>>> sending email <<<"
     CustomerMailer.recommendation_email(self).deliver_later
-#    content = File.read(File.join('app', 'templates', 'recommendation_email.html.erb'))
- #   return ERB.new(content).result(OpenStruct.new(customer: customer, recommendation: self, product: product).instance_eval { binding })
   end
 end

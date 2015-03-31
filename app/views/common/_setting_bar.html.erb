@@ -1,6 +1,6 @@
 <ul class="section-tabs">
-  <li class=<%= params[:action] == 'ssdindex' ? 'active' : ''%>> <a href="/index"> index </a> </li>
-  <li class=<%= params[:action] == 'settings' ? 'active' : '' %>> <a href="<%= settings_recomify_path %>"> Settings </a> </li>
-  <li class=<%= params[:controller] == 'customers' and params[:action] == 'index' ? 'active' : ''%>> <a href="<%=customers_path%>"> Customers </a> </li>
   <li class=<%= params[:controller] == 'recommendations' and params[:action] == 'index' ? 'active' : ''%>> <a href="<%= recommendations_path %>"> Recommendations </a> </li>
-</ul>
+  <li class=<%= params[:controller] == 'customers' and params[:action] == 'index' ? 'active' : ''%>> <a href="<%=customers_path%>"> Customers </a> </li>
+  <li class=<%= params[:action] == 'settings' ? 'active' : '' %>> <a href="<%= settings_recomify_path %>"> Settings </a> </li>
+  <li class=<%= params[:action] == 'ssdindex' ? 'active' : ''%>> <a href="/index"> index </a> </li>
+ </ul>

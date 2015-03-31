@@ -8,8 +8,10 @@ class SessionsController < ApplicationController
   def show
     if response = request.env['omniauth.auth']
       sess = ShopifyAPI::Session.new(params[:shop],response['credentials']['token'])
+
+      Shop.first.update_attributes(token: response['credentials']['token'], domain: "http://#{params[:shop]}")
+
       session[:shopify] = ShopifySessionRepository.store(sess)
-      #ShopifyAPI::Base.activate_session(Marshal::load session[:shopify])
 
       flash[:notice] = "Logged in"
       redirect_to return_address
@@ -29,7 +31,7 @@ class SessionsController < ApplicationController
     if shop_name = sanitize_shop_param(params)
       @redirect_url = "/auth/shopify?shop=#{shop_name}"
       render "/common/iframe_redirect", :format => [:html], layout: false
-      Shop.instance
+      Shop.create
     else
       redirect_to return_address
     end

@@ -1,5 +1,8 @@
 EmbededApp::Application.routes.draw do
 
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+  mount ResqueWeb::Engine => "/resque_web"
+
   controller :sessions do
     get 'login' => :new
     get 'auth/shopify/callback' => :show

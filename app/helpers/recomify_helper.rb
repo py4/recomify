@@ -1,6 +1,6 @@
 module RecomifyHelper
   def shop_url
-    Shop.instance.domain
+    Shop.first.domain
   end
 
   def product_admin_url product
@@ -8,7 +8,7 @@ module RecomifyHelper
   end
 
   def product_price product
-    Shop.instance.money_format.gsub("{{amount}}",product.price)
+    Shop.first.money_format.gsub("{{amount}}",product.price)
   end
 
   def product_url product
@@ -16,7 +16,7 @@ module RecomifyHelper
   end
 
   def get_price product
-    Shop.instance.money_format.gsub("{{amount}}",product.price) 
+    Shop.first.money_format.gsub("{{amount}}",product.price) 
   end
 
 end

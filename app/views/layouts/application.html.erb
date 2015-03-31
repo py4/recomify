@@ -10,6 +10,7 @@
       shopOrigin: "<%= "https://#{ @shop_session.url }" if @shop_session %>",  // Expects: https://exampleshop.myshopify.com
       debug: true
     });
+    <%= render partial: 'common/flash' %>
   </script>
 
   <%= stylesheet_link_tag 'application' %>

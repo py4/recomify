@@ -1,3 +1,7 @@
 production: env for SES
-            delayed_job workers
+            install redis
+            resque workers
             assets compilation
+
+* restart resque after editing jobs
+* write blog post about that resque job

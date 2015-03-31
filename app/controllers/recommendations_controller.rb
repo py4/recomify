@@ -7,12 +7,18 @@ class RecommendationsController < ApplicationController
   end
 
   def index
+    puts "=============================="
+#    puts ShopifyAPI::Session.url
+ #   puts ShopifyAPI::Session.token
+ #   puts ShopifyAPI::Session.name
+    puts session[:shopify].token
+    puts "=============================="
     @recommendations = Recommendation.includes(:customer, :product).all
   end
 
   def create
-    product = Product.find_or_create_by(product_params.merge(shop_id: Shop.instance.id))
-    customer = Customer.find_or_create_by(customer_params.merge(shop_id: Shop.instance.id))
+    product = Product.find_or_create_by(product_params.merge(shop_id: Shop.first.id))
+    customer = Customer.find_or_create_by(customer_params.merge(shop_id: Shop.first.id))
     Recommendation.create recommendation_params.merge(product_id: product.id, customer_id: customer.id)
   end
 
