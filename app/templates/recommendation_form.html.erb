@@ -11,8 +11,9 @@
     width: <%= width %>px;
   }
 
-  .recommendation_form btn {
-    color: <%= button_color %>;
+  .recommendation_form .btn {
+    background-color: <%= button_color %>;
+    color: <%= text_color %>;
   }
 
   .recommendation_form input,textarea{
@@ -27,8 +28,10 @@
 <div class="recommendation_form">
 <form class="form" id="recommendation_form" action="http://localhost:3000/recommendations" accept-charset="UTF-8" method="post">
 
-  <input placeholder="Email of your friend" type="text" name="recommendation[email]"/>
-  <textarea placeholder="Your comment about this product" name="recommendation[comment]"></textarea>
+  <label for="recommendation[email]">Email: </label> <input type="text" name="recommendation[email]"/>
+
+  <label for="recommendation[comment]">Comment: </label>
+  <textarea name="recommendation[comment]"></textarea>
 
   <input value="{{product.id}}" type="hidden" name="product[product_id]"/>
   <input value="{{product.title}}" type="hidden" name="product[name]"/>

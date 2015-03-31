@@ -14,6 +14,7 @@ class RecommendationsController < ApplicationController
     product = Product.find_or_create_by(product_params.merge(shop_id: get_shop_id))
     customer = Customer.find_or_create_by(customer_params.merge(shop_id: get_shop_id))
     Recommendation.create recommendation_params.merge(product_id: product.id, customer_id: customer.id)
+    redirect_to(:back)
   end
 
   private

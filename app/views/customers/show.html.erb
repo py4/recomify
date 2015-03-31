@@ -23,7 +23,7 @@ ShopifyApp.ready(function(){
     <div class="section-row">
       <div class="section-cell">
         <table class="table-section">
-          <%= render partial: 'recommendations/recommendation_partial', locals: {recommendations: @customer.recommendations, shop_url: shop_url} %>
+          <%= render partial: 'recommendations/recommendation_partial', locals: {recommendations: @customer.recommendations} %>
       </div>
     </div>
   </div>
