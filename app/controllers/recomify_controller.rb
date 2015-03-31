@@ -5,9 +5,9 @@ class RecomifyController < ApplicationController
   end
 
   def update
-    Shop.first.update_attributes settings: params[:shop][:settings]
+    @current_shop.update_attributes settings: params[:shop][:settings]
     flash[:notice] = "Updated form style"
-    Resque.enqueue(RecommendationSnippetUpdater, params[:shop][:settings])
+    Resque.enqueue(RecommendationSnippetUpdater, @current_shop.id, params[:shop][:settings])
   	redirect_to settings_recomify_path
   end
 

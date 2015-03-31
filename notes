@@ -5,3 +5,4 @@ production: env for SES
 
 * restart resque after editing jobs
 * write blog post about that resque job
+* api calles need to be http://address and not addresss...
