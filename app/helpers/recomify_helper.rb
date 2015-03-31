@@ -4,10 +4,19 @@ module RecomifyHelper
   end
 
   def product_admin_url product
-    Shop.instance.domain + "/products/" + product.product_id
+    "/products/" + product.product_id
   end
 
   def product_price product
     Shop.instance.money_format.gsub("{{amount}}",product.price)
   end
+
+  def product_url product
+    shop_url + product.url
+  end
+
+  def get_price product
+    Shop.instance.money_format.gsub("{{amount}}",product.price) 
+  end
+
 end

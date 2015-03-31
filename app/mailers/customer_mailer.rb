@@ -1,5 +1,7 @@
 class CustomerMailer < ApplicationMailer
 
+  helper :recomify
+
   def recommendation_email recommendation
     @recommendation = recommendation
     @product = recommendation.product
