@@ -11,6 +11,8 @@ gem "acts_as_singleton"
 gem "pg"
 gem "simple_form"
 gem 'jquery-minicolors-rails'
+gem 'aws-ses', '~> 0.4.4', require: 'aws/ses'
+gem 'figaro'
 
 group :assets do
   gem "sass-rails"

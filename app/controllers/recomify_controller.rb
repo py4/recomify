@@ -2,6 +2,7 @@ class RecomifyController < ApplicationController
   around_filter :shopify_session
 
   def settings
+    puts ShopifyAPI::Shop.current.money_format
   end
 
   def update

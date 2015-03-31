@@ -16,3 +16,5 @@
 
 # Ignore application configurations
 /config/shopify_app.yml
+# Ignore application configuration
+/config/application.yml
