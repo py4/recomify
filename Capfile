@@ -3,11 +3,10 @@ require 'capistrano/setup'
 
 # Include default deployment tasks
 require 'capistrano/deploy'
-require 'capistrano/postgresql'
-require 'capistrano/rvm'
+#require 'capistrano/postgresql'
 require 'capistrano/bundler'
-require 'capistrano/rails'
-
+require 'capistrano/rbenv'
+#require 'capistrano/rails'
 
 # Include tasks from other gems included in your Gemfile
 #

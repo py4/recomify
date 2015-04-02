@@ -15,5 +15,9 @@ test:
   database: recomify_test
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+  username: ubuntu
   database: recomfiy_production

@@ -17,6 +17,7 @@ gem 'daemons'
 gem 'resque', "~> 2.0.0.pre.1", github: "resque/resque"
 gem 'resque-web', git: 'https://github.com/resque/resque-web.git', branch: 'resque-2', require: 'resque_web'
 gem 'thin'
+gem "therubyracer", platforms: :ruby
 
 group :assets do
   gem "sass-rails"
@@ -26,7 +27,6 @@ end
 
 group :development, :test do
   gem "less-rails-bootstrap"
-  gem "therubyracer", platforms: :ruby
   gem "pry-rails"
   gem "byebug"
   gem "web-console", '~> 2.0'
@@ -38,6 +38,6 @@ group :development, :test do
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-bundler', '~> 1.1'
   gem 'capistrano-postgresql', '~> 4.2.0'
-  gem 'capistrano-rvm'
+  gem 'capistrano-rbenv', '~> 2.0'
 
 end
