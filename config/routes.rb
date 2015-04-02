@@ -29,6 +29,7 @@ EmbededApp::Application.routes.draw do
   #get 'index' => 'home#index'
 
   #root :to => 'recomify#settings'
-  root :to => 'recommendations#index'
+  #root :to => 'recommendations#index'
+  root :to => 'static#hello'
   #root :to => 'home#index'
 end
