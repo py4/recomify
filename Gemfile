@@ -33,4 +33,11 @@ group :development, :test do
   gem "meta_request"
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'capistrano',  '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-bundler', '~> 1.1'
+  gem 'capistrano-postgresql', '~> 4.2.0'
+  gem 'capistrano-rvm'
+
 end
