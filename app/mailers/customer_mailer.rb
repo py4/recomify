@@ -7,7 +7,7 @@ class CustomerMailer < ApplicationMailer
     @product = recommendation.product
     @customer = recommendation.customer
 
-    mail(to: "ibtkm2009@gmail.com", subject: "#{@customer.name} recommends you the product #{@product.name}")
+    mail(to: recommendation.email, subject: "#{@customer.name} recommends you the product #{@product.name}")
   end
 
   

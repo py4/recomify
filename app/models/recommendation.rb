@@ -1,6 +1,7 @@
 class Recommendation < ActiveRecord::Base
   belongs_to :customer
   belongs_to :product
+  belongs_to :shop
 
   after_create :send_email
 

@@ -29,20 +29,13 @@
 <form class="form" id="recommendation_form" action="http://localhost:3000/recommendations" accept-charset="UTF-8" method="post">
 
   <label for="recommendation[email]">Email: </label> <input type="text" name="recommendation[email]"/>
-
   <label for="recommendation[comment]">Comment: </label>
   <textarea name="recommendation[comment]"></textarea>
 
   <input value="{{product.id}}" type="hidden" name="product[product_id]"/>
-  <input value="{{product.title}}" type="hidden" name="product[name]"/>
-  <input value="{{product.url}}" type="hidden" name="product[url]"/>
-  <input value="{{product.price}}" type="hidden" name="product[price]" />
-  <input value="{{product.description}}" type="hidden" name="product[description]" />
-
+  <input value="{{product.price | money_with_currency}}" type="hidden" name="product[price]" />
 
   <input value="{{customer.id}}" type="hidden" name="customer[customer_id]"/>
-  <input value="{{customer.name}}" type="hidden" name="customer[name]"/>
-  <input value="{{customer.email}}" type="hidden" name="customer[email]"/>
 
   <input value="{{shop.domain}}" type="hidden" name="shop[domain]"/>
 
@@ -50,5 +43,24 @@
   <input type="submit" name="commit" value="Send my recommendation!" class="btn"/>
 </form>
 </div>
+<div id="response"></div>
+<script> 
+     $(function(){
+        $("#recommendation_form").click(function(event){
+            event.preventDefault();
+
+            $.ajax({
+                    url:'http://localhost:3000/recommendations',
+                    type:'POST',
+                    data:$(this).serialize(),
+                    success:function(result){
+                        $("#response").text(result);
+
+                    }
+
+            });
+        });
+    });
+    </script> 
 
 {% endif %}

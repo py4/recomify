@@ -1,6 +1,7 @@
 class RecommendationsController < ApplicationController
 
   around_filter :shopify_session, except: [:create]
+  before_filter :add_headers, only: [:create]
 
   def show
     @recommendation = Recommendation.find(params[:id])
@@ -11,29 +12,35 @@ class RecommendationsController < ApplicationController
   end
 
   def create
-    product = Product.find_or_create_by(product_params.merge(shop_id: get_shop_id))
-    customer = Customer.find_or_create_by(customer_params.merge(shop_id: get_shop_id))
-    Recommendation.create recommendation_params.merge(product_id: product.id, customer_id: customer.id)
-    redirect_to(:back)
+    email_regex = /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/
+
+    return render plain: "Email format is incorrect" unless email_regex.match(recommendation_params[:email])
+    return render plain: "Comment cannot be empty" if recommendation_params[:comment] == ""
+    
+    render plain: "Recommendation submitted!"
+    Resque.enqueue(RecommendationPersistor, product_price, recommendation_params, params[:product][:product_id], params[:customer][:customer_id], shop_domain)
   end
 
   private
 
-  def customer_params
-    params.require(:customer).permit(:customer_id,:name, :email)
-  end
-
   def recommendation_params
-    params.require(:recommendation).permit(:email,:comment, :product_id, :product_name, :product_url) 
+    params.require(:recommendation).permit(:email,:comment) 
   end
 
-  def product_params
-    params.require(:product).permit(:product_id, :name, :description, :url, :price)
+  def product_id
+    params[:product][:product_id]
   end
 
-  def get_shop_id
-    shop = Shop.find_by(domain: params[:shop][:domain])
-    shop.id
+  def shop_domain
+    params[:shop][:domain]
+  end
+
+  def customer_id
+    params[:customer][:customer_id]
+  end
+
+  def product_price
+    params[:product][:price]
   end
 
 end

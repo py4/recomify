@@ -3,6 +3,7 @@ class Shop < ActiveRecord::Base
 
   has_many :customers, dependent: :destroy
   has_many :products, dependent: :destroy
+  has_many :recommendations, dependent: :destroy
   
   after_initialize :set_settings 
   after_create :set_additional_data

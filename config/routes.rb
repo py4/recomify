@@ -16,6 +16,7 @@ EmbededApp::Application.routes.draw do
   resources :recommendations, only: [:create, :index, :show]
   resources :customers, only: [:index, :show]
 
+  post 'post_test' => 'static#post_test'
   #get 'modal' => "home#modal", :as => :modal
   #get 'modal_buttons' => "home#modal_buttons", :as => :modal_buttons
   #get 'regular_app_page' => "home#regular_app_page"
@@ -29,7 +30,7 @@ EmbededApp::Application.routes.draw do
   #get 'index' => 'home#index'
 
   #root :to => 'recomify#settings'
-  #root :to => 'recommendations#index'
-  root :to => 'static#hello'
+  root :to => 'recommendations#index'
+  #root :to => 'static#hello'
   #root :to => 'home#index'
 end

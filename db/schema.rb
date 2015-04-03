@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331115337) do
+ActiveRecord::Schema.define(version: 20150403151722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,10 +67,12 @@ ActiveRecord::Schema.define(version: 20150331115337) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "product_id"
+    t.integer  "shop_id"
   end
 
   add_index "recommendations", ["customer_id"], name: "index_recommendations_on_customer_id", using: :btree
   add_index "recommendations", ["product_id"], name: "index_recommendations_on_product_id", using: :btree
+  add_index "recommendations", ["shop_id"], name: "index_recommendations_on_shop_id", using: :btree
 
   create_table "shops", force: :cascade do |t|
     t.datetime "created_at",   null: false
@@ -85,4 +87,5 @@ ActiveRecord::Schema.define(version: 20150331115337) do
   add_foreign_key "products", "shops"
   add_foreign_key "recommendations", "customers"
   add_foreign_key "recommendations", "products"
+  add_foreign_key "recommendations", "shops"
 end
