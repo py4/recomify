@@ -48,9 +48,8 @@
      $(function(){
         $("#recommendation_form").click(function(event){
             event.preventDefault();
-
             $.ajax({
-                    url:'http://localhost:3000/recommendations',
+                    url:<%= server_address+"/recommendations" %>,
                     type:'POST',
                     data:$(this).serialize(),
                     success:function(result){
