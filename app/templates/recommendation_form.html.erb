@@ -26,7 +26,7 @@
 
 {% if customer %}
 <div class="recommendation_form">
-<form class="form" id="recommendation_form" action="http://localhost:3000/recommendations" accept-charset="UTF-8" method="post">
+<form class="form" id="recommendation_form" action="<%= server_address %>/recommendations" accept-charset="UTF-8" method="post">
 
   <label for="recommendation[email]">Email: </label> <input type="text" name="recommendation[email]"/>
   <label for="recommendation[comment]">Comment: </label>

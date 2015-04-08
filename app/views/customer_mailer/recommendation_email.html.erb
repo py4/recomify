@@ -163,7 +163,7 @@ ul li, ol li {
 					<td>
 						<p>Hi Sir/Madam,</p>
 						<p><%= @customer.name %> has sent you a recommendation about one of our products: </p>
-						<h3><%= @product.name %> | <%= raw get_price(@product) %> </h3>
+						<h3><%= @product.name %> | <%= raw @product.price %> </h3>
 						<p><%= raw @product.description %></p>
             <p> You can view this product using <a href="<%= product_url(@product) %>"> this link </a>.
 						<h3>Comment</h3>

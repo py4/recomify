@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_action :set_current_shop
   before_action :add_headers
+  #before_action :test
 
   def add_headers
     response.headers['Access-Control-Allow-Origin'] = request.headers['Origin'] || '*'
@@ -16,6 +17,10 @@ class ApplicationController < ActionController::Base
 
   def current_shop_id
     session[:shopify]
+  end
+
+  def test
+    session.clear
   end
 
 end
